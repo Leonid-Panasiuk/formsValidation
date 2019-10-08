@@ -1,6 +1,7 @@
 <div class="container-fluid one">
-    <input (click)="isLoginPage = true" type="submit" style="margin:20px" value="Login" class="btn btn-warning btn-lg">
-    <input (click)="isLoginPage = false" type="submit" value="Register" class="btn btn-dark btn-lg"></div>
+    <button (click)="isLoginPage = true" type="submit" style="margin:20px" value="Login" class="btn btn-warning btn-lg">Login</button>
+    <button (click)="isLoginPage = false" type="submit" value="Register" class="btn btn-dark btn-lg">Register</button>
+    </div>
 <div class="container-fluid">
     
     <form *ngIf="isLoginPage"  [formGroup]="userForm" (submit)="onSubmit()" class="col-4 offset-4"
@@ -23,7 +24,7 @@
             <label for="rememberMe"> I agree to the terms and conditions</label>
         </div>
 
-        <input type="submit" style="margin-bottom: 20px" [disabled]="!form.valid" value="Login"
+        <input type="submit" style="margin-bottom: 20px" [disabled]="!userForm.valid" value="Login"
             class="btn btn-success btn-custom">
     </form>
 
