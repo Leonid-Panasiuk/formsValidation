@@ -3,27 +3,27 @@
     <input (click)="isLoginPage = false" type="submit" value="Register" class="btn btn-dark btn-lg"></div>
 <div class="container-fluid">
     
-    <form *ngIf="isLoginPage" #infoForm="ngForm" [formGroup]="userForm" (submit)="onSubmit()" class="col-4 offset-4"
+    <form *ngIf="isLoginPage"  [formGroup]="userForm" (submit)="onSubmit()" class="col-4 offset-4"
         style="text-align: center">
         <div class="form-group ">
             <div class="input-group">
-                <input  type="email" [(ngModel)]="user.email" formControlName="email" name="email" class="form-control"
+                <input  type="email"  formControlName="email" name="email" class="form-control"
                     placeholder="Username or email">
 
             </div>
         </div>
         <div class="form-group ">
             <div class="input-group">
-                <input type="password" [(ngModel)]="user.password" formControlName="password" name="password"
+                <input type="password"  formControlName="password" name="password"
                     class="form-control" placeholder="Password [a-Za-z] [@#$%]" required>
             </div>
         </div>
         <div class="form-group">
-            <input type="checkbox" [(ngModel)]="user.remember" formControlName="remember" required>
+            <input type="checkbox"  formControlName="remember" required>
             <label for="rememberMe"> I agree to the terms and conditions</label>
         </div>
 
-        <input type="submit" style="margin-bottom: 20px" [disabled]="!infoForm.form.valid" value="Login"
+        <input type="submit" style="margin-bottom: 20px" [disabled]="!form.valid" value="Login"
             class="btn btn-success btn-custom">
     </form>
 

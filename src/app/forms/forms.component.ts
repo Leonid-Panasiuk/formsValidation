@@ -26,16 +26,16 @@ export class FormsComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  onSubmit() {
-    console.log(this.user);
-  }
-  
   userForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/)),
     remember : new FormControl ('', Validators.pattern('true'))
   });
+  onSubmit() {
+    console.log(this.user);
+  }
+  
+
 
   regForm = new FormGroup({
     username: new FormControl('',Validators.minLength(3) ),
